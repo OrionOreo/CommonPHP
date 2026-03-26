@@ -1,6 +1,4 @@
 <?php
-$isProductPage = $_SERVER['REQUEST_URI'] === "/product_card/12345678-abcd-dcba-abcd-87654321";
-
 $id = htmlspecialchars($product['id']);
 $url = htmlspecialchars($product['url']);
 $title = htmlspecialchars($product['title']);
@@ -23,12 +21,6 @@ $maxInput = $maxPerOrder >= 1 ? $maxPerOrder : $stock;
 
 $buttonClass = "add_to_cart" . ($maxPerOrder === 1 ? " opc" : "");
 ?>
-
-<?php if ($isProductPage): ?>
-<head>
-    <link rel="stylesheet" href="/assets/css/out/cards" />
-</head>
-<?php endif; ?>
 
 <div class="product_card" data-product-id="<?= $id ?>">
     <a href="<?= $url ?>" draggable="false">
